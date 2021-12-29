@@ -1,0 +1,25 @@
+nav {
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    position: absolute;
+    top: 20px;
+}
+
+li {
+    display: inline;
+}
+
+span {
+    font-size: 1.3rem;
+    margin: auto 15px;
+}
+
+.v-line {
+    border-left: 1px solid #000;
+    height: 25px;
+    position: absolute;
+    top: -3px;
+}

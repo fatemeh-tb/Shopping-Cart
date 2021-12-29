@@ -1,0 +1,490 @@
+.top-aside {
+    background-color: rgb(227, 203, 229);
+}
+
+.main {
+    margin: 50px;
+    position: relative;
+
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+header a.logo {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    text-decoration: none;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.top-aside .hero {
+    position: absolute;
+    width: 42%;
+    top: 130px;
+    left: 50%;
+    max-width: 320px;
+}
+
+.top-aside .hero p {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.top-aside .hero h1 {
+    font-size: 5em;
+    font-weight: 200;
+    line-height: 1em;
+    margin: 0 0 30px 0;
+}
+
+#price {
+    transform: rotate(-90deg);
+    font-size: 1.6rem;
+    position: absolute;
+    top: 25px;
+    left: 230px;
+    color: rgb(186, 159, 216);
+    font-weight: bold;
+}
+
+.main-btns {
+    margin-top: 50px;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.view-btn {
+    color: rgb(160, 130, 217);
+    background-color: #fff;
+    clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.view-btn:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.add-btn {
+    color: #fff;
+    background-color: rgb(160, 130, 217);
+    clip-path: polygon(0 0, 100% 0%, 85% 100%, 0 100%);
+}
+
+.add-btn:hover {
+    background-color: rgb(136, 111, 184);
+}
+
+
+.social-media {
+    position: absolute;
+    top: 330px;
+    right: -20px;
+}
+
+.social-media ul {
+    list-style: none;
+}
+
+.social-media ul li {
+    margin: 35px auto;
+    color: #888;
+    transition: 0.5s;
+}
+
+.social-media .iconify {
+    width: 18px;
+    height: 18px;
+}
+
+.social-media ul li:hover {
+    cursor: pointer;
+    transform: scale(1.8);
+    transition: 0.5s;
+}
+
+.social-media .twitter-icon :hover {
+    color: #00ACED;
+}
+
+.social-media .facebook-icon :hover {
+    color: #3B5998;
+}
+
+.social-media .instagram-icon :hover {
+    color: #F4405F;
+}
+
+.prev-next {
+    position: absolute;
+    top: 531px;
+    right: 0px;
+    width: 10%;
+    height: 50px;
+}
+
+.prev-next span {
+    font-size: 1.5rem;
+    line-height: 50px;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.prev-next :hover {
+    background-color: #a6a6a6;
+}
+
+.achive-aside {
+    background-color: rgb(160, 130, 213);
+    position: relative;
+}
+
+.desc h3 {
+    color: #fff;
+    max-width: 380px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 40px 25px 40px 140px;
+}
+
+.rate {
+    position: relative;
+    color: #fff;
+}
+
+.left-num {
+    position: absolute;
+    right: 320px;
+    bottom: 50px;
+}
+
+.right-num {
+    position: absolute;
+    right: 110px;
+    bottom: 50px;
+}
+
+.rate h1 {
+    font-size: 3rem;
+    font-weight: 550;
+    color: #fff;
+}
+
+.rate .iconify {
+    color: rgb(249, 201, 90);
+}
+
+.rate-num {
+    font-size: 12px;
+}
+
+.sale-num {
+    font-size: 12px;
+}
+
+.like-img {
+    position: absolute;
+    left: 40%;
+    bottom: 15px;
+}
+
+.content-aside {
+    background-color: rgb(249, 249, 249);
+}
+
+.content-aside .hero {
+    max-width: 45%;
+    text-align: center;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.content-aside h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgb(17, 16, 79);
+}
+
+.content-aside p {
+    color: #a2a4a7;
+}
+
+.content-aside .images {
+    margin: 200px auto;
+    position: relative;
+    width: 600px;
+}
+
+.content-aside .images img {
+    transition: 700ms;
+}
+
+.content-aside .images img:hover {
+    transform: scale(1.2);
+    transition: 700ms;
+}
+
+.content-aside .images #c253 {
+    width: 120px;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute;
+    left: 10px;
+}
+
+.content-aside .images #c252 {
+    width: 180px;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute;
+    left: 160px;
+    top: -110px;
+}
+
+.content-aside .images #c250 {
+    width: 180px;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute;
+    right: 30px;
+    top: -30px;
+}
+
+.content-aside .images #c251 {
+    width: 90px;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute;
+    left: 160px;
+    top: 90px;
+}
+
+.detail-btn {
+    color: #fff;
+    background-color: rgb(160, 130, 217);
+    width: 120px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.detail-btn:hover {
+    background-color: rgb(136, 111, 184);
+}
+
+.tools {
+    background-color: rgb(253, 253, 253);
+    position: relative;
+    margin: auto;
+}
+
+.tools aside {
+    float: left;
+    margin: 10px 80px;
+}
+
+.tools .hero {
+    text-align: center;
+    margin: auto;
+    padding: 20px 30px 20px 120px;
+}
+
+.tools .iconify {
+    font-size: 40px;
+    color: rgb(17, 16, 79);
+}
+
+.tools .hero aside p {
+    font-size: 0.7rem;
+    max-width: 100px;
+    text-align: center;
+    color: #a2a4a7;
+    margin-top: 5px;
+}
+
+.aboutUs {
+    background-color: rgb(249, 249, 249);
+}
+
+@media screen and (max-width: 1000px) {
+    .top-aside .hero {
+        left: 55%;
+        max-width: 250px;
+    }
+
+    .top-aside .hero h1 {
+        font-size: 3.7rem;
+    }
+
+    .top-aside .hero p {
+        font-size: 0.6rem;
+    }
+
+    #price {
+        font-size: 1.2rem;
+        top: 13px;
+        left: 200px;
+    }
+
+    .desc h3 {
+        max-width: 300px;
+        font-size: 1.2rem;
+        padding: 40px 25px 40px 80px;
+    }
+
+    .like-img {
+        left: 40%;
+        bottom: 40px;
+        width: 130px;
+    }
+
+    .rate h1 {
+        font-size: 2.5rem;
+    }
+
+    .left-num {
+        right: 210px;
+    }
+
+    .right-num {
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    .main-img {
+        width: 350px;
+    }
+
+    .top-aside .hero {
+        top: 100px;
+        max-width: 200px;
+    }
+
+    .top-aside .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .top-aside .hero p {
+        font-size: 0.5rem;
+    }
+
+    #price {
+        font-size: 0.9rem;
+        left: 130px;
+    }
+
+    .main-btns {
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 240px;
+        height: 30px;
+        font-size: 0.5rem;
+    }
+
+    .social-media {
+        top: 200px;
+    }
+
+    .desc h3 {
+        max-width: 360px;
+        padding: 40px 25px 40px 120px;
+    }
+
+    .like-img {
+        left: 60%;
+        bottom: 10px;
+        width: 160px;
+    }
+
+    .rate {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+    .main-img {
+        width: 450px;
+    }
+
+    .top-aside .hero {
+        position: relative;
+        top: -7px;
+        left: 30%;
+        max-width: 320px;
+    }
+
+    .top-aside .hero p {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #444;
+    }
+
+    .top-aside .hero h1 {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    #price {
+        font-size: 1.2rem;
+        left: 190px;
+    }
+
+    .desc h3 {
+        max-width: 300px;
+        font-size: 1rem;
+        padding: 40px 25px 40px 80px;
+    }
+}
+
+
+@media screen and (max-width: 625px) {
+    .main {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .main-img {
+        width: 350px;
+    }
+
+    .main {
+        width: 350px;
+    }
+
+    .desc h3 {
+        max-width: 280px;
+        padding: 40px 25px 40px 50px;
+    }
+
+    .like-img {
+        left: 70%;
+        bottom: 30px;
+        width: 100px;
+    }
+}
