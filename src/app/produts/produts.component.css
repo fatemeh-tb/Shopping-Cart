@@ -1,0 +1,139 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.prod {
+  background-color: rgb(243, 243, 243);
+}
+
+.wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.products {
+  display: inline-block;
+  width: 23%;
+  margin: 50px;
+}
+
+.image-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2% 2% 0 0;
+}
+
+.images {
+  height: 25em;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+/* IMAGES */
+#image-1 {
+  background-image: url("../../assets/images/Products/thrive-cbd-oil-orange-bliss-300x300.png");
+}
+
+#image-2 {
+  background-image: url("../../assets/images/Products/thrive-cbd-full-spectrum-therapy-natural-300x300.png");
+}
+
+#image-3 {
+  background-image: url("../../assets/images/Products/cbd-cbg-fast-acting-therapy-all-natural-mock-up-300x300.png");
+}
+
+#image-4 {
+  background-image: url("../../assets/images/Products/thrive-cbd-oil-intimacy-front-300x300.png");
+}
+
+#image-5 {
+  background-image: url("../../assets/images/Products/thrive-cbd-sleep-therapy-300x300.png");
+}
+
+#image-6 {
+  background-image: url("../../assets/images/Products/cbd-sleep-therapy-extra-strenght-package-300x300.png");
+}
+
+#image-7 {
+  background-image: url("../../assets/images/Products/cbd-thc-free-broad-spectrum-distillate-tincture-extra-strength-1-300x300.png");
+}
+
+#image-8 {
+  background-image: url("../../assets/images/Products/cbd-thc-free-broad-spectrum-distillate-tincture-mock-up-300x300.png");
+}
+
+#image-9 {
+  background-image: url("../../assets/images/Products/dropper-bottle-cbd-tincture-natural-2-300x300.png");
+}
+
+.text-box {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+}
+
+h2, h3 {
+  float: left;
+  font-weight: 400;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 0.2em auto;
+}
+
+.price {
+  clear: left;
+  width: 100%;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.price {
+  color: Grey;
+}
+
+.description, label, input {
+  float: left;
+  clear: left;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  margin: 0.2em auto;
+}
+
+input:focus {
+  outline-color: #fdf;
+}
+
+label {
+  width: 60%;
+}
+
+.text-box input {
+  width: 20%;
+  clear: none;
+  margin-bottom: 40px;
+}
+
+.text-box button {
+  margin-top: 1em;
+}
+
+.add-btn {
+  color: #fff;
+  background-color: rgb(160, 130, 217);
+  font-weight: 500;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.add-btn:hover {
+  background-color: rgb(136, 111, 184);
+
+}

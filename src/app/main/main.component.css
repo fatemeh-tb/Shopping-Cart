@@ -2,12 +2,6 @@
     background-color: rgb(227, 203, 229);
 }
 
-.main {
-    margin: 50px;
-    position: relative;
-
-}
-
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -158,28 +152,38 @@ header a.logo {
     position: relative;
 }
 
+.desc {
+    float: left;
+    padding: 40px 25px 40px 100px;
+    display: inline;
+}
+
 .desc h3 {
     color: #fff;
-    max-width: 380px;
+    max-width: 230px;
     font-weight: 500;
     font-size: 1.2rem;
-    padding: 40px 25px 40px 140px;
 }
 
 .rate {
     color: #fff;
+    float: right;
+    margin: auto 50px;
 }
 
 .left-num {
-    position: absolute;
-    right: 320px;
-    bottom: 50px;
+    margin: 30px 50px;
+    display: inline-block;
+
 }
 
 .right-num {
-    position: absolute;
+    /* position: absolute;
     right: 110px;
-    bottom: 50px;
+    bottom: 50px; */
+    margin: 30px 50px;
+    display: inline-block;
+
 }
 
 .rate h1 {
@@ -202,7 +206,7 @@ header a.logo {
 
 .like-img {
     position: absolute;
-    left: 40%;
+    left: 39%;
     bottom: 15px;
 }
 
@@ -407,28 +411,35 @@ header a.logo {
         left: 200px;
     }
 
+    .desc {
+        padding-left: 50px;
+    }
+
     .desc h3 {
-        max-width: 300px;
-        font-size: 1.2rem;
-        padding: 40px 25px 40px 80px;
+        max-width: 200px;
+    }
+
+    .rate {
+        margin: 0 20px;
+    }
+
+    .left-num {
+        margin: 30px 20px;
+
+    }
+
+    .right-num {
+        margin: 30px 20px;
     }
 
     .like-img {
-        left: 40%;
+        left: 35%;
         bottom: 40px;
         width: 130px;
     }
 
     .rate h1 {
         font-size: 2.5rem;
-    }
-
-    .left-num {
-        right: 210px;
-    }
-
-    .right-num {
-        right: 35px;
     }
 
     .content-aside .wrapper {
@@ -494,21 +505,6 @@ header a.logo {
         top: 200px;
     }
 
-    .desc h3 {
-        max-width: 360px;
-        padding: 40px 25px 40px 120px;
-    }
-
-    .like-img {
-        left: 60%;
-        bottom: 10px;
-        width: 160px;
-    }
-
-    .rate {
-        display: none;
-    }
-
     .content-aside .wrapper {
         max-width: 100%;
     }
@@ -571,9 +567,23 @@ header a.logo {
     }
 
     .desc h3 {
-        max-width: 300px;
-        font-size: 1rem;
-        padding: 40px 25px 40px 80px;
+        max-width: 70%;
+        font-size: 1.2rem;
+        margin: auto;
+    }
+
+    .left-num {
+        margin-top: 10px;
+    }
+
+    .right-num {
+        margin-top: 10px;
+    }
+
+    .like-img {
+        left: 60px;
+        bottom: 25px;
+        width: 130px;
     }
 
     .content-aside .images #c253 {
@@ -611,8 +621,11 @@ header a.logo {
 
 
 @media screen and (max-width: 625px) {
-    .main {
-        width: 450px;
+
+    .like-img {
+        left: 50px;
+        bottom: 30px;
+        width: 100px;
     }
 
     .content-aside .images #c253 {
@@ -636,21 +649,6 @@ header a.logo {
 @media screen and (max-width: 425px) {
     .main-img {
         width: 350px;
-    }
-
-    .main {
-        width: 450px;
-    }
-
-    .desc h3 {
-        max-width: 280px;
-        padding: 40px 25px 40px 50px;
-    }
-
-    .like-img {
-        left: 70%;
-        bottom: 30px;
-        width: 100px;
     }
 
     .content-aside .images #c253 {

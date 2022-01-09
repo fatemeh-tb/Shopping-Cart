@@ -41,6 +41,10 @@
     font-size: 0.9rem;
 }
 
+.sub-btn:hover {
+    background-color: rgb(136, 111, 184);
+}
+
 .end-part h3 {
     font-weight: 700;
 }
