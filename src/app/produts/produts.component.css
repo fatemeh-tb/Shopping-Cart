@@ -98,13 +98,24 @@ h2, h3 {
   color: Grey;
 }
 
-.description, label, input {
+label, input {
   float: left;
   clear: left;
   width: 100%;
   font-weight: 300;
   font-size: 1em;
   text-align: center;
+  margin: 0.2em auto;
+}
+
+.description {
+  float: left;
+  clear: left;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #11104F;
   margin: 0.2em auto;
 }
 
@@ -136,4 +147,31 @@ label {
 .add-btn:hover {
   background-color: rgb(136, 111, 184);
 
+}
+
+@media screen and (max-width: 1190px) {
+  .wrapper {
+    max-width: 800px;
+  }
+
+  .products {
+    width: 37%;
+    margin: 40px;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .products {
+    width: 37%;
+    margin: 30px;
+  }
+}
+
+
+@media screen and (max-width: 760px) {
+  .products {
+    width: 60%;
+    margin: 50px;
+  }
 }
