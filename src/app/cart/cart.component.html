@@ -1,0 +1,41 @@
+<article class="cart">
+
+    <div class="cart-product" *ngIf="products.length == 0">
+        <img class="cart-img" src="../../assets/images/Cart/basket-png.png" alt="">
+        <h2>
+            Your card is empty !
+        </h2>
+        <a routerLink="/products">
+            Click to see products.
+        </a>
+    </div>
+
+    <div class="cart-product">
+            <table class="table" *ngIf="products.length > 0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i = index">
+                        <td class="num">{{i + 1}}</td>
+                        <td><img style="width: 100px;" src="{{item.image}}" alt=""></td>
+                        <td style="width: 25%;">{{item.description}}</td>
+                        <td style="width: 12%;">&#36; {{item.price}}</td>
+                        <td style="width: 12%;">{{item.quantity}}</td>
+                        <td style="width: 12%;">&#36; {{item.total}}</td>
+                        <td style="cursor: pointer;" (click)="onRemoveItem(i)">
+                            <span class="material-icons-outlined text-danger">delete</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</article>

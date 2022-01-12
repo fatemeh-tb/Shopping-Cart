@@ -1,0 +1,48 @@
+.cart {
+    background-color: rgb(243, 243, 243);
+}
+
+.cart-product {
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 150px 0 60px 0;
+    min-height: 400px;
+}
+
+.cart-img {
+    width: 180px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.cart-product a {
+    font-size: 0.9rem;
+    color: #757575;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart-product a:hover {
+    text-decoration: underline;
+}
+
+
+.card-table {
+    position: relative;
+    flex-direction: column;
+    min-width: none;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+    margin: 80px 0;
+}
+
+td {
+    vertical-align: middle
+}

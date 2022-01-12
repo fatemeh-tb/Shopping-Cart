@@ -1,17 +1,29 @@
 <nav dir="rtl">
     <ul>
-        <li routerLink="/products"><a class="material-icons-outlined">
+        <li class="list-item" (click)="onOpenSidenav()"><a class="material-icons-outlined">
                 format_list_bulleted
             </a></li>
         <li class="v-line"></li>
-        <li routerLink="/home"><a class="material-icons-outlined">
+        <li class="list-item" routerLink="/home"><a class="material-icons-outlined">
                 home
             </a></li>
-        <li><a class="material-icons-outlined">
+        <li class="list-item" routerLink="/cart">
+            <div *ngIf="totalItems != 0" style="font-size: 10px;" class="badge bg-danger">{{totalItems}}</div>
+            <a class="material-icons-outlined">
                 shopping_cart
-            </a></li>
-        <li><a class="material-icons-outlined">
+            </a>
+        </li>
+        <li class="list-item"><a class="material-icons-outlined">
                 person
             </a></li>
     </ul>
 </nav>
+
+
+<div class="sidenav" [class.openSide]="sidenav_opened">
+    <a class="closebtn" (click)="onCloseSidenav()">&times;</a>
+    <li class="title" href="#">products</li>
+    <li routerLink="/products" class="item"><a>CBD Oil</a></li>
+    <li class="item"><a>Hand Sanitizers</a> </li>
+    <li class="item"><a>Balms</a></li>
+</div>

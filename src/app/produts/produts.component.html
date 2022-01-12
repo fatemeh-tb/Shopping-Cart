@@ -1,122 +1,16 @@
 <article class="prod clearfix">
     <div class="wrapper">
-        <div class="products">
+        <div class="products" *ngFor="let prods of products, let i =index">
             <div class="image-box">
-                <div class="images" id="image-1"></div>
+                <img src="{{prods.image}}">
             </div>
             <div class="text-box">
-                <p class="description">Thrive CBD Full Spectrum Therapy 1000mg | Orange Bliss</p>
-                <h3 class="price">$100.</h3>
+                <p class="description">{{prods.description}}</p>
+                <h3 class="price">&#36; {{prods.price}}</h3>
                 <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-2"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">Thrive CBD Full Spectrum Therapy | 2000mg</p>
-                <h3 class="price">$175.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-3"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">CBD Isolate + CBG | Fast Acting Therapy | All-Natural Flavor | 1000mg</p>
-                <h3 class="price">$119.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-4"></div>
-            </div>
-            <div class="text-box">
-                <p class="description"> Thrive CBD Intimacy Arousal Oil - 1000mg</p>
-                <h3 class="price">$95.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-5"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">CBD + CBN Tincture | Sleep Therapy</p>
-                <h3 class="price">$80.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-6"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">CBD + CBN Tincture - EXTRA STRENGTH Sleep Therapy
-                </p>
-                <h3 class="price">$139.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-7"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">Extra Strength | THC-Free Broad Spectrum Tincture | Natural Orange | 2000mg - 2oz
-                    (60ml)</p>
-                <h3 class="price">$175.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-8"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">THC-Free Broad Spectrum Tincture | Natural Orange | 1000mg
-                <p>
-                <h3 class="price">$110.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="products">
-            <div class="image-box">
-                <div class="images" id="image-9"></div>
-            </div>
-            <div class="text-box">
-                <p class="description">Thrive CBD Full Spectrum | Natural Flavor</p>
-                <h3 class="price">$49.00-$175.00</h3>
-                <label for="item-1-quantity">Quantity:</label>
-                <input type="number" name="item-1-quantity" id="item-1-quantity" value="1" min="1">
-                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
+                <input type="number" name="quantity" id="item-1-quantity" value="1" min="1">
+                <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button"
+                    (click)="onAddToCart(prods)">Add to Cart</button>
             </div>
         </div>
     </div>
