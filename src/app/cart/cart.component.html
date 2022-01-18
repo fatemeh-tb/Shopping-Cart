@@ -1,7 +1,7 @@
 <article class="cart">
 
     <div class="cart-product" *ngIf="products.length == 0">
-        <img class="cart-img" src="../../assets/images/Cart/basket-png.png" alt="">
+        <img class="cart-img" src="assets/images/Cart/basket-png.png" alt="">
         <h2>
             Your card is empty !
         </h2>
@@ -11,31 +11,39 @@
     </div>
 
     <div class="cart-product">
-            <table class="table" *ngIf="products.length > 0">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Product Image</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of products; let i = index">
-                        <td class="num">{{i + 1}}</td>
-                        <td><img style="width: 100px;" src="{{item.image}}" alt=""></td>
-                        <td style="width: 25%;">{{item.description}}</td>
-                        <td style="width: 12%;">&#36; {{item.price}}</td>
-                        <td style="width: 12%;">{{item.quantity}}</td>
-                        <td style="width: 12%;">&#36; {{item.total}}</td>
-                        <td style="cursor: pointer;" (click)="onRemoveItem(i)">
-                            <span class="material-icons-outlined text-danger">delete</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="table" *ngIf="products.length > 0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products; let i = index">
+                    <td class="num">{{i + 1}}</td>
+                    <td><img style="width: 100px;" src="{{item.image}}" alt=""></td>
+                    <td style="width: 25%;">{{item.description}}</td>
+                    <td style="width: 12%;">&#36; {{item.price}}</td>
+                    <td style="width: 12%;">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary" (click)="decQuantity(item)"
+                                [disabled]="item.quantity == 1">&minus;</button>
+                            <input type="text" class="btn quantity" value="{{item.quantity}}" readonly>
+                            <button type="button" class="btn btn-secondary" (click)="incQuantity(item)"
+                                [disabled]="item.quantity == 10">&plus;</button>
+                        </div>
+                    </td>
+                    <td style="width: 12%;">&#36; {{item.quantity * item.price}}</td>
+                    <td (click)="onRemoveItem(i)">
+                        <span style="cursor: pointer;" class="material-icons-outlined text-danger">delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </article>

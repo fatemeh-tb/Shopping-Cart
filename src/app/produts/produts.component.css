@@ -48,9 +48,7 @@ h2, h3 {
   width: 100%;
   text-align: center;
   margin: 15px auto;
-}
-
-.price {
+  font-size: 1.3rem;
   color: Grey;
 }
 

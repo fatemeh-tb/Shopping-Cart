@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import swal from 'sweetalert';
+import { Product } from '../Domain/products.model';
 
 @Component({
   selector: 'app-cart',
@@ -19,7 +20,6 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts()
       .subscribe(res => {
         this.products = res;
-        this.grandTotal = this.cartService.getTotalPrice();
       })
   }
 
@@ -40,6 +40,14 @@ export class CartComponent implements OnInit {
         )
       }
     })
+  }
+
+  incQuantity(quant: Product) {
+    quant.quantity++;
+  }
+
+  decQuantity(quant: Product) {
+    quant.quantity--;
   }
 
 }

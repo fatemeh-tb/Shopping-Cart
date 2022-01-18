@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { Product } from '../Domain/products.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +16,16 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-
-  addToCart(product: any) {
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
+  addToCart(product: Product) {
+    if (this.cartItemList.find((i: any) => i.id === product.id)) {
+      product.quantity++;
+    } else {
+      this.cartItemList.push(product);
+      this.productList.next(this.cartItemList);
+    }
   }
 
-  getTotalPrice() : number{
-    let grandTotal = 0;
-    this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
-    })
-    return grandTotal;
-  }
-
-  removeCartItem(id: number){
+  removeCartItem(id: number) {
     this.cartItemList.splice(id, 1)
     this.productList.next(this.cartItemList);
   }

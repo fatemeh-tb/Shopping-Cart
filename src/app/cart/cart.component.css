@@ -46,3 +46,10 @@ h2 {
 td {
     vertical-align: middle
 }
+
+.quantity {
+    background-color: #6C757D;
+    color: #fff;
+    cursor: initial;
+    width: 50px;
+}
