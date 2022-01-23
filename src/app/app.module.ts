@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProdutsComponent } from './produts/produts.component';
+import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 
 import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
@@ -27,7 +27,7 @@ import { MatListModule } from '@angular/material/list'
     MainComponent,
     NavbarComponent,
     FooterComponent,
-    ProdutsComponent,
+    ProductsComponent,
     CartComponent
   ],
   imports: [

@@ -6,12 +6,12 @@ import { ProductService } from '../services/product.service';
 
 
 @Component({
-  selector: 'app-produts',
-  templateUrl: './produts.component.html',
-  styleUrls: ['./produts.component.css']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
 
-export class ProdutsComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
   quantity: number
   products: Product[] = []

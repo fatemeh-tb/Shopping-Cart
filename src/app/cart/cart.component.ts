@@ -11,8 +11,6 @@ import { Product } from '../Domain/products.model';
 })
 export class CartComponent implements OnInit {
   public products: any = [];
-  public grandTotal !: number;
-  dogMode = false;
 
   constructor(private cartService: CartService, public dialog: MatDialog,) { }
 

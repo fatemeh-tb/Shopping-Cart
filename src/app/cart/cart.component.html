@@ -34,8 +34,7 @@
                             <button type="button" class="btn btn-secondary" (click)="decQuantity(item)"
                                 [disabled]="item.quantity == 1">&minus;</button>
                             <input type="text" class="btn quantity" value="{{item.quantity}}" readonly>
-                            <button type="button" class="btn btn-secondary" (click)="incQuantity(item)"
-                                [disabled]="item.quantity == 10">&plus;</button>
+                            <button type="button" class="btn btn-secondary" (click)="incQuantity(item)">&plus;</button>
                         </div>
                     </td>
                     <td style="width: 12%;">&#36; {{item.quantity * item.price}}</td>
