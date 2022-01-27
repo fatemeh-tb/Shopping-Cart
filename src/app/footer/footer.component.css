@@ -8,7 +8,7 @@
 }
 
 .footer {
-    background-color: rgb(253, 253, 253);
+    background-color: #fdfdfd;
 }
 
 .top-part {
@@ -17,7 +17,7 @@
 
 .line {
     margin: auto 180px;
-    color: rgb(207, 207, 207);
+    color: #cfcfcf;
 }
 
 .top-part h2 {
@@ -37,12 +37,12 @@
 
 .sub-btn {
     color: #fff;
-    background-color: rgb(160, 130, 217);
+    background-color: #a082d9;
     font-size: 0.9rem;
 }
 
 .sub-btn:hover {
-    background-color: rgb(136, 111, 184);
+    background-color: #886fb8;
 }
 
 .end-part h3 {
@@ -107,6 +107,11 @@
     margin: 60px 100px 60px 0px;
     padding-bottom: 30px;
     float: right;
+}
+
+.end-part ul li a {
+    text-decoration: none;
+    color: #a2a4a7;
 }
 
 .end-part ul {

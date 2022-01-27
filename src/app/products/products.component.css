@@ -7,6 +7,34 @@
   height: 0;
 }
 
+.search-box {
+  padding-bottom: 60px;
+  padding-top: 30px;
+}
+
+.search-box input[type="text"] {
+  padding: 3px 30px 3px 22px;
+  border: none;
+  width: 45px;
+  height: 45px;
+  background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png") no-repeat;
+  transition: width 0.5s ease-in-out;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+}
+
+.search-box input[type="text"]:focus {
+  width: 70%;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff !important;
+  background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png")2px 2px no-repeat;
+  transition: width 0.5s ease-in-out;
+  cursor: text;
+}
+
 .prod {
   background-color: rgb(243, 243, 243);
 }

@@ -1,14 +1,20 @@
 <article class="prod clearfix">
+
     <div class="wrapper">
-        <div class="products" *ngFor="let prods of products, let i =index">
+        <div class="search-box">
+            <input class="search-txt" type="text" [(ngModel)]="searchTerm" placeholder="Search Products"
+                (keyup)="search($event)">
+        </div>
+
+        <div class="products" *ngFor="let item of products |  filter:searchKey:'description'">
             <div class="image-box">
-                <img src="{{prods.image}}">
+                <img src="{{item.image}}">
             </div>
             <div class="text-box">
-                <p class="description">{{prods.description}}</p>
-                <h3 class="price">&#36; {{prods.price}}</h3>
+                <p class="description">{{item.description}}</p>
+                <h3 class="price">&#36; {{item.price}}</h3>
                 <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button"
-                    (click)="onAddToCart(prods)">Add to Cart</button>
+                    (click)="onAddToCart(item)">Add to Cart</button>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import swal from 'sweetalert';
 import { Product } from '../Domain/products.model';
+import { ProductsList } from '../Domain/productsList.model';
 
 @Component({
   selector: 'app-cart',
@@ -40,11 +41,11 @@ export class CartComponent implements OnInit {
     })
   }
 
-  incQuantity(quant: Product) {
+  incQuantity(quant: ProductsList) {
     quant.quantity++;
   }
 
-  decQuantity(quant: Product) {
+  decQuantity(quant: ProductsList) {
     quant.quantity--;
   }
 

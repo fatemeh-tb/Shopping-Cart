@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Product } from '../Domain/products.model';
+import { ProductsList } from '../Domain/productsList.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-  addToCart(product: Product) {
+  addToCart(product: ProductsList) {
     if (this.cartItemList.find((i: any) => i.id === product.id)) {
       product.quantity++;
     } else {

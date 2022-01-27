@@ -20,10 +20,10 @@
 </nav>
 
 
-<div class="sidenav" [class.openSide]="sidenav_opened">
+<div class="sidenav" [class.openSide]="sidenav_opened" *ngFor="let item of products">
     <a class="closebtn" (click)="onCloseSidenav()">&times;</a>
-    <li class="title" href="#">products</li>
-    <li routerLink="/products" class="item"><a>CBD Oil</a></li>
-    <li class="item"><a>Hand Sanitizers</a> </li>
-    <li class="item"><a>Balms</a></li>
+    <li class="title">products</li>
+    <li [routerLink]="['/products', 'cbdoil']" class="item"><a>CBD Oil</a></li>
+    <li [routerLink]="['/products', 'handsanitizers']" class="item"><a>Hand Sanitizers</a> </li>
+    <li [routerLink]="['/products', 'balms']" class="item"><a>Balms</a></li>
 </div>

@@ -1,7 +1,7 @@
-export interface Product {
-  id: number;
-  image: string;
-  description: string;
-  price: number;
-  quantity: number;
+import { ProductsList } from "./productsList.model";
+
+export class Product {
+  prodId: number;
+  prodName: string;
+  prodList: ProductsList[]
 }

@@ -81,7 +81,7 @@ a {
     right: 0;
     border: 1px solid #e1e1e1;
     text-align: left;
-    background-color: rgb(253, 253, 253);
+    background-color: #fdfdfd;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -96,6 +96,7 @@ a {
     color: #818181;
     text-transform: uppercase;
     font-size: 1em;
+    font-weight: 500;
     letter-spacing: 1px;
     border-bottom: 1px solid #e1e1e1;
 }
@@ -106,7 +107,8 @@ a {
 }
 
 .item:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: #f0dbf1;
+    color: #886fb8;
 }
 
 .item a {

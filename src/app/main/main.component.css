@@ -1,5 +1,5 @@
 .top-aside {
-    background-color: rgb(227, 203, 229);
+    background-color: #e3cbe5;
 }
 
 .clearfix:after {
@@ -48,7 +48,7 @@ header a.logo {
     position: absolute;
     top: 25px;
     left: 230px;
-    color: rgb(186, 159, 216);
+    color: #ba9fd8;
     font-weight: bold;
 }
 
@@ -68,23 +68,23 @@ header a.logo {
 }
 
 .view-btn {
-    color: rgb(160, 130, 217);
+    color: #a082d9;
     background-color: #fff;
     clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .view-btn:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: #e4e4e4;
 }
 
 .add-btn {
     color: #fff;
-    background-color: rgb(160, 130, 217);
+    background-color: #a082d9;
     clip-path: polygon(0 0, 100% 0%, 85% 100%, 0 100%);
 }
 
 .add-btn:hover {
-    background-color: rgb(136, 111, 184);
+    background-color: #886fb8;
 }
 
 .social-media {
@@ -148,7 +148,7 @@ header a.logo {
 }
 
 .achive-aside {
-    background-color: rgb(160, 130, 213);
+    background-color: #a082d5;
     position: relative;
 }
 
@@ -190,7 +190,7 @@ header a.logo {
 }
 
 .rate .iconify {
-    color: rgb(249, 201, 90);
+    color: #f9c95a;
 }
 
 .rate-num {
@@ -208,7 +208,7 @@ header a.logo {
 }
 
 .content-aside {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
 }
 
 .content-aside .wrapper {
@@ -222,7 +222,7 @@ header a.logo {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 3px;
-    color: rgb(17, 16, 79);
+    color: #11104f;
 }
 
 .content-aside p {
@@ -281,7 +281,7 @@ header a.logo {
 
 .detail-btn {
     color: #fff;
-    background-color: rgb(160, 130, 217);
+    background-color: #a082d9;
     width: 120px;
     letter-spacing: 2px;
     margin-top: 20px;
@@ -289,11 +289,11 @@ header a.logo {
 }
 
 .detail-btn:hover {
-    background-color: rgb(136, 111, 184);
+    background-color: #886fb8;
 }
 
 .tools {
-    background-color: rgb(253, 253, 253);
+    background-color: #fdfdfd;
     position: relative;
     margin: auto;
 }
@@ -311,7 +311,7 @@ header a.logo {
 
 .tools .iconify {
     font-size: 40px;
-    color: rgb(17, 16, 79);
+    color: #11104f;
 }
 
 .tools .wrapper aside p {
@@ -323,7 +323,7 @@ header a.logo {
 }
 
 .aboutUs {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
     position: relative;
 }
 
@@ -379,13 +379,13 @@ header a.logo {
     margin-top: 50px;
     width: 130px;
     letter-spacing: 2px;
-    background-color: rgb(160, 130, 217);
+    background-color: #a082d9;
     color: #fff;
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .aboutUs .wrapper .exp-btn:hover {
-    background-color: rgb(136, 111, 184);
+    background-color: #886fb8;
 }
 
 @media screen and (max-width: 1000px) {
