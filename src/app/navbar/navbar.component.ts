@@ -11,7 +11,7 @@ import { ProductService } from '../services/product.service';
 export class NavbarComponent implements OnInit {
   sidenav_opened = false;
   products: Product[];
-  totalItems: number = 0
+  totalItems: any = 0
 
   constructor(private cartService: CartService,
     private productService: ProductService) { }
@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
     this.productService.getProducts().subscribe((data: any) => {
       this.products = data;
     })
+
     this.cartService.getProducts().subscribe(res => {
       this.totalItems = res.length
     })

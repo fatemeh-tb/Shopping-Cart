@@ -12,17 +12,21 @@ import { ProductsList } from '../Domain/productsList.model';
 })
 export class CartComponent implements OnInit {
   public products: any = [];
+  total: number;
 
   constructor(private cartService: CartService, public dialog: MatDialog,) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts()
-      .subscribe(res => {
-        this.products = res;
-      })
+    if (localStorage['cart']) {
+      let cartlist = JSON.parse(localStorage.getItem('cart') || "");
+      this.cartService.cartItemList = cartlist;
+    }
+
+    this.products = this.cartService.cartItemList
+    this.totalPrice()
   }
 
-  async onRemoveItem(id: number) {
+  onRemoveItem(id: number) {
     swal({
       dangerMode: true,
       title: 'Delete Item',
@@ -37,16 +41,24 @@ export class CartComponent implements OnInit {
           'Your selected item has been deleted successfully.',
           'success'
         )
+        this.totalPrice()
       }
     })
   }
 
   incQuantity(quant: ProductsList) {
     quant.quantity++;
+    this.totalPrice()
+    this.cartService.storeLocalStorage();
   }
 
   decQuantity(quant: ProductsList) {
     quant.quantity--;
+    this.totalPrice()
+    this.cartService.storeLocalStorage();
   }
 
+  totalPrice() {
+    this.total = this.products.reduce((acc: any, prod: ProductsList) => acc += prod.price * prod.quantity, 0)
+  }
 }

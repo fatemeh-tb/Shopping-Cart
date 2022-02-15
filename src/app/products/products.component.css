@@ -1,159 +1,155 @@
 .clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
 
-.search-box {
-  padding-bottom: 60px;
-  padding-top: 30px;
-}
+  .search-box {
+    padding-bottom: 60px;
+    padding-top: 30px;
+  }
 
-.search-box input[type="text"] {
-  padding: 3px 30px 3px 22px;
-  border: none;
-  width: 45px;
-  height: 45px;
-  background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png") no-repeat;
-  transition: width 0.5s ease-in-out;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-}
+  .search-box input[type="text"] {
+    padding: 3px 30px 3px 22px;
+    border: none;
+    width: 45px;
+    height: 45px;
+    background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png") no-repeat;
+    transition: width 0.5s ease-in-out;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+  }
 
-.search-box input[type="text"]:focus {
-  width: 70%;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  outline: none;
-  background-color: #fff !important;
-  background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png")2px 2px no-repeat;
-  transition: width 0.5s ease-in-out;
-  cursor: text;
-}
+  .search-box input[type="text"]:focus {
+    width: 70%;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff !important;
+    background: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png")2px 2px no-repeat;
+    transition: width 0.5s ease-in-out;
+    cursor: text;
+  }
 
-.prod {
-  background-color: rgb(243, 243, 243);
-}
+  .prod {
+    background-color: rgb(243, 243, 243);
+  }
 
-.wrapper {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 50px;
-}
-
-.products {
-  display: inline-block;
-  width: 23%;
-  margin: 50px;
-}
-
-.image-box {
-  width: 100%;
-  overflow: hidden;
-}
-
-
-.text-box {
-  width: 100%;
-  padding: 1em;
-  text-align: center;
-}
-
-h2, h3 {
-  float: left;
-  font-weight: 400;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin: 0.2em auto;
-}
-
-.price {
-  clear: left;
-  width: 100%;
-  text-align: center;
-  margin: 15px auto;
-  font-size: 1.3rem;
-  color: Grey;
-}
-
-label, input {
-  float: left;
-  clear: left;
-  width: 100%;
-  font-weight: 300;
-  font-size: 1em;
-  text-align: center;
-  margin: 0.2em auto;
-}
-
-.description {
-  float: left;
-  clear: left;
-  text-align: center;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  color: #11104F;
-  margin: 0.2em auto;
-}
-
-input:focus {
-  outline-color: #fdf;
-}
-
-label {
-  width: 60%;
-}
-
-.text-box input {
-  width: 20%;
-  clear: none;
-  margin-bottom: 40px;
-}
-
-.text-box button {
-  margin-top: 1em;
-}
-
-.add-btn {
-  color: #fff;
-  background-color: rgb(160, 130, 217);
-  font-weight: 500;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.add-btn:hover {
-  background-color: rgb(136, 111, 184);
-
-}
-
-@media screen and (max-width: 1190px) {
   .wrapper {
-    max-width: 800px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 50px;
   }
 
   .products {
-    width: 37%;
-    margin: 40px;
-  }
-}
-
-
-@media screen and (max-width: 1000px) {
-  .products {
-    width: 37%;
-    margin: 30px;
-  }
-}
-
-
-@media screen and (max-width: 760px) {
-  .products {
-    width: 60%;
+    display: inline-block;
+    width: 23%;
     margin: 50px;
   }
-}
+
+  .image-box {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .text-box {
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+  }
+
+  h2, h3 {
+    float: left;
+    font-weight: 400;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0.2em auto;
+  }
+
+  .price {
+    clear: left;
+    width: 100%;
+    text-align: center;
+    margin: 15px auto;
+    font-size: 1.3rem;
+    color: Grey;
+  }
+
+  label, input {
+    float: left;
+    clear: left;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.2em auto;
+  }
+
+  .name {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #11104F;
+    margin: 0.2em auto;
+  }
+
+  input:focus {
+    outline-color: #fdf;
+  }
+
+  label {
+    width: 60%;
+  }
+
+  .text-box input {
+    width: 20%;
+    clear: none;
+    margin-bottom: 40px;
+  }
+
+  .text-box button {
+    margin-top: 1em;
+  }
+
+  .add-btn {
+    color: #fff;
+    background-color: rgb(160, 130, 217);
+    font-weight: 500;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .add-btn:hover {
+    background-color: rgb(136, 111, 184);
+
+  }
+
+  @media screen and (max-width: 1190px) {
+    .wrapper {
+      max-width: 800px;
+    }
+
+    .products {
+      width: 37%;
+      margin: 40px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .products {
+      width: 37%;
+      margin: 30px;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    .products {
+      width: 60%;
+      margin: 50px;
+    }
+  }

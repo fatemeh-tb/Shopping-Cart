@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Product } from '../Domain/products.model';
 import { ProductsList } from '../Domain/productsList.model';
@@ -7,14 +7,13 @@ import { ProductsList } from '../Domain/productsList.model';
   providedIn: 'root'
 })
 export class CartService {
-
   public cartItemList: any = []
   public productList = new BehaviorSubject<any>([]);
 
   constructor() { }
 
   getProducts() {
-    return this.productList.asObservable();
+    return this.productList
   }
 
   addToCart(product: ProductsList) {
@@ -24,10 +23,18 @@ export class CartService {
       this.cartItemList.push(product);
       this.productList.next(this.cartItemList);
     }
+    this.storeLocalStorage()
   }
 
   removeCartItem(id: number) {
     this.cartItemList.splice(id, 1)
     this.productList.next(this.cartItemList);
+    localStorage.removeItem('cart');
+    this.storeLocalStorage()
   }
+
+  storeLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(this.cartItemList))
+  }
+
 }

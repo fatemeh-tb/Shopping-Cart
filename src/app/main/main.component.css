@@ -37,7 +37,6 @@ header a.logo {
 
 .top-aside .wrapper h1 {
     font-size: 5em;
-    font-weight: 300;
     line-height: 1em;
     margin: 0 0 30px 0;
 }
@@ -47,7 +46,7 @@ header a.logo {
     font-size: 1.6rem;
     position: absolute;
     top: 25px;
-    left: 230px;
+    left: 250px;
     color: #ba9fd8;
     font-weight: bold;
 }
@@ -103,6 +102,10 @@ header a.logo {
     transition: 0.5s;
 }
 
+.social-media ul li a {
+    color: #888;
+}
+
 .social-media .iconify {
     width: 18px;
     height: 18px;
@@ -118,8 +121,8 @@ header a.logo {
     color: #00ACED;
 }
 
-.social-media .facebook-icon :hover {
-    color: #3B5998;
+.social-media .linkedin-icon :hover {
+    color: #1769AA;
 }
 
 .social-media .instagram-icon :hover {
@@ -185,7 +188,7 @@ header a.logo {
 
 .rate h1 {
     font-size: 3rem;
-    font-weight: 550;
+    font-weight: 700;
     color: #fff;
 }
 
@@ -405,7 +408,7 @@ header a.logo {
     #price {
         font-size: 1.2rem;
         top: 13px;
-        left: 200px;
+        left: 215px;
     }
 
     .desc {
@@ -485,7 +488,7 @@ header a.logo {
 
     #price {
         font-size: 0.9rem;
-        left: 130px;
+        left: 145px;
     }
 
     .main-btns {
@@ -560,7 +563,7 @@ header a.logo {
 
     #price {
         font-size: 1.2rem;
-        left: 190px;
+        left: 205px;
     }
 
     .desc h3 {

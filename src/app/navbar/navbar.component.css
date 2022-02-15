@@ -109,6 +109,7 @@ a {
 .item:hover {
     background-color: #f0dbf1;
     color: #886fb8;
+    font-size: 2rem;
 }
 
 .item a {

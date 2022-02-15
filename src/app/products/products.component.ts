@@ -15,6 +15,7 @@ import { ProductsList } from '../Domain/productsList.model';
 export class ProductsComponent implements OnInit {
 
   products: ProductsList[];
+  productName: any;
 
   searchTerm: string;
   searchKey: string = "";
@@ -24,11 +25,18 @@ export class ProductsComponent implements OnInit {
     private snackBar: MatSnackBar,
     private route: ActivatedRoute) { }
 
+
   ngOnInit(): void {
+    if (localStorage['cart']) {
+      let cartlist = JSON.parse(localStorage.getItem('cart') || "");
+      this.cartService.cartItemList = cartlist;
+    }
+
     this.route.params.forEach((params: Params) => {
       let prodName = params['prodName'];
-      this.productService.getProductsById(prodName);
+      this.productService.getProductsById(prodName)
       this.products = this.productService.productList
+      this.productName = prodName;
     });
 
     this.productService.search.subscribe((val: any) => {
@@ -36,12 +44,11 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
     this.productService.search.next(this.searchTerm);
   }
-
 
   onAddToCart(data: ProductsList) {
     this.snackBar.open('Item added successfully', 'Got It!', {

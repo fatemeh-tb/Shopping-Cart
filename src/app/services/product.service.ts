@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import * as data from '../../assets/productLists/products.json'
 import { Product } from '../Domain/products.model';
 import { ProductsList } from '../Domain/productsList.model';
@@ -18,7 +18,8 @@ export class ProductService {
   products: Product[] = (data as any).default;
   productList: ProductsList[];
 
-  getProducts() {
+
+  getProducts(): Observable<any> {
     return this.http.get('assets/productLists/products.json')
   }
 
@@ -28,6 +29,19 @@ export class ProductService {
         this.productList = this.products[i].prodList;
       }
     }
+  }
+
+  getProduct(id: any) {
+    return this.productList[this.getSelectedIndex(id)];
+  }
+
+  getSelectedIndex(id: any){
+    for (var i = 0; i < this.productList.length; i++) {
+      if (this.productList[i].name == id) {
+        return i;
+      }
+    }
+    return -1;
   }
 
 }

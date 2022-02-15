@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 
@@ -19,8 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule} from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list'
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -30,8 +31,9 @@ import { MatListModule } from '@angular/material/list'
     NavbarComponent,
     FooterComponent,
     ProductsComponent,
+    ProductDetailsComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

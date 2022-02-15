@@ -1,5 +1,6 @@
 .cart {
     background-color: #f3f3f3;
+    min-height: 1000px;
 }
 
 .cart-product {
@@ -9,6 +10,15 @@
     padding: 150px 0 60px 0;
     min-height: 400px;
 }
+
+.table {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+	box-shadow: 1px 1px 10px #424242;
+}
+
 
 .cart-img {
     width: 180px;
@@ -30,21 +40,16 @@ h2 {
     text-decoration: underline;
 }
 
-
-.card-table {
-    position: relative;
-    flex-direction: column;
-    min-width: none;
-    word-wrap: break-word;
-    background-clip: border-box;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
-    margin: 80px 0;
+td {
+    vertical-align: middle;
 }
 
-td {
-    vertical-align: middle
+th {
+    padding-top: 30px;
+}
+
+.cart-table:hover {
+    background-color: #f3f3f3;
 }
 
 .quantity {
