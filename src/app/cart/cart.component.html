@@ -1,52 +1,121 @@
 <article class="cart">
-
     <div class="cart-product" *ngIf="products.length == 0">
         <img class="cart-img" src="assets/images/Cart/basket-png.png" alt="">
         <h2>
             Your card is empty !
         </h2>
-        <!-- <a routerLink="/products">
+        <a routerLink="/products">
             Click to see products.
-        </a> -->
+        </a>
     </div>
 
-    <div class="cart-product">
-        <table class="table" *ngIf="products.length > 0">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Product Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="cart-table" *ngFor="let item of products; let i = index">
-                    <td class="num">{{i + 1}}</td>
-                    <td><img style="width: 100px;" src="{{item.image}}" alt=""></td>
-                    <td style="width: 25%;">{{item.name}}</td>
-                    <td style="width: 12%;">&#36; {{item.price}}</td>
-                    <td style="width: 12%;">
-                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary" (click)="decQuantity(item)"
-                                [disabled]="item.quantity == 1">&minus;</button>
-                            <input type="text" class="btn quantity" value="{{item.quantity}}" readonly>
-                            <button type="button" class="btn btn-secondary" (click)="incQuantity(item)">&plus;</button>
+    <div class="cart-product" *ngIf="products.length > 0">
+        <main>
+            <section class="checkout-form">
+                <form action="#!" method="get">
+                    <h6>Contact information</h6>
+                    <div class="form-control">
+                        <label for="checkout-email">E-mail</label>
+                        <div class="form-input">
+                            <span class="fa fa-envelope"></span>
+                            <input type="email" id="checkout-email" name="checkout-email"
+                                placeholder="Enter your email...">
                         </div>
-                    </td>
-                    <td style="width: 12%;">&#36; {{item.quantity * item.price}}</td>
-                    <td (click)="onRemoveItem(i)">
-                        <span style="cursor: pointer;" class="material-icons-outlined text-danger">delete</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding-top: 40px; font-size: 1.3rem; min-width: 150px;">Total: &nbsp; <strong>&#36; {{total}}</strong> </td>
-                    <td style="padding-top: 40px;"><button class="btn btn-outline-primary">Purchase</button></td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                    <div class="form-control">
+                        <label for="checkout-phone">Phone</label>
+                        <div class="form-input">
+                            <span class="fa fa-phone"></span>
+                            <input type="tel" name="checkout-phone" id="checkout-phone"
+                                placeholder="Enter you phone...">
+                        </div>
+                    </div>
+                    <br>
+                    <h6>Shipping address</h6>
+                    <div class="form-control">
+                        <label for="checkout-name">Full name</label>
+                        <div class="form-input">
+                            <span class="fa fa-user-circle"></span>
+                            <input type="text" id="checkout-name" name="checkout-name" placeholder="Enter you name...">
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="checkout-address">Address</label>
+                        <div class="form-input">
+                            <span class="fa fa-home"></span>
+                            <input type="text" name="checkout-address" id="checkout-address"
+                                placeholder="Your address...">
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="checkout-city">City</label>
+                        <div class="form-input">
+                            <span class="fa fa-building"></span>
+                            <input type="text" name="checkout-city" id="checkout-city" placeholder="Your city...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control">
+                            <label for="checkout-country">Country</label>
+                            <div class="form-input">
+                                <span class="fa fa-globe"></span>
+                                <input type="text" name="checkout-country" id="checkout-country"
+                                    placeholder="Your country..." list="country-list">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label for="checkout-postal">Postal code</label>
+                            <div class="form-input">
+                                <span class="fa fa-archive"></span>
+                                <input type="numeric" name="checkout-postal" id="checkout-postal"
+                                    placeholder="Your postal code...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control checkbox-control">
+                        <input type="checkbox" name="checkout-checkbox" id="checkout-checkbox">
+                        <label for="checkout-checkbox">Save this information for next time</label>
+                    </div>
+                    <div class="form-control-btn">
+                        <button class="check-Btn">Continue</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="checkout-details">
+                <div class="checkout-details-inner">
+                    <div class="checkout-lists">
+                        <div class="card" *ngFor="let item of products; let i = index">
+                            <div (click)="onRemoveItem(i)"> <span
+                                    class="material-icons-outlined remove-item">clear</span>
+                            </div>
+                            <div class="card-image"><img src="{{item.image}}" alt="">
+                            </div>
+                            <div class="card-details">
+                                <div class="card-name">{{item.name}}</div>
+                                <div class="card-price">&#36; {{item.price}}</div>
+                                <div class="total-price">Total price: <span class="card-total">&#36; {{item.price *
+                                        item.quantity}}</span></div>
+                                <div class="card-wheel">
+                                    <button class="quan-btn" type="button" [disabled]="item.quantity == 1"
+                                        (click)="decQuantity(item)">-</button>
+                                    <div>{{item.quantity}}</div>
+                                    <button class="quan-btn" type="button" (click)="incQuantity(item)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-shipping">
+                        <h6>Shipping</h6>
+                        <p>$19</p>
+                    </div>
+                    <div class="checkout-total">
+                        <h6>Total</h6>
+                        <p>&#36; {{total}}</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 </article>
