@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import * as data from '../../assets/productLists/products.json'
 import { Product } from '../Domain/products.model';
 import { ProductsList } from '../Domain/productsList.model';

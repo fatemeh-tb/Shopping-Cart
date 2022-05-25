@@ -56,6 +56,12 @@
     color: #a2a4a7;
 }
 
+.end-part span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #7a7a7a;
+}
+
 .social-media {
     margin: 10px auto 30px;
 }
