@@ -1,47 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../services/cart.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProductsList } from '../Domain/productsList.model';
-
+import { Product } from '../Domain/product.model';
+import { ProductGroup } from '../Domain/productGroup.model';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
-
 export class ProductsComponent implements OnInit {
-
-  products: ProductsList[];
+  products: ProductGroup[];
+  productList: Product[];
   productName: any;
 
-  searchTerm: string;
-  searchKey: string = "";
+  productDetails: Product[] = [];
+  onDetails = false;
 
-  constructor(private cartService: CartService,
+  searchTerm: string;
+  searchKey: string = '';
+
+  constructor(
     private productService: ProductService,
-    private snackBar: MatSnackBar,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) {}
 
 
   ngOnInit(): void {
-    if (localStorage['cart']) {
-      let cartlist = JSON.parse(localStorage.getItem('cart') || "");
-      this.cartService.cartItemList = cartlist;
-    }
-
     this.route.params.forEach((params: Params) => {
-      let prodName = params['prodName'];
-      this.productService.getProductsById(prodName)
-      this.products = this.productService.productList
-      this.productName = prodName;
+      let title = params['title'];
+      this.getProductsById(title);
+      this.productName = title;
     });
 
     this.productService.search.subscribe((val: any) => {
       this.searchKey = val;
-    })
+    });
   }
 
 
@@ -50,12 +44,28 @@ export class ProductsComponent implements OnInit {
     this.productService.search.next(this.searchTerm);
   }
 
-  onAddToCart(data: ProductsList) {
-    this.snackBar.open('Item added successfully', 'Got It!', {
-      duration: 3000,
-      verticalPosition: 'top'
-    })
-    this.cartService.addToCart(data)
+
+  onAddToCart(data: Product) {
+    this.productService.addToCart(data);
   }
 
+
+  onProductDetails(id: number) {
+    this.productService.getProductById(id).subscribe((result) => {
+      this.productDetails.push(result);
+      this.onDetails = true;
+    });
+  }
+
+
+  getProductsById(name: any) {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+      for (let i = 0; i < this.products.length; i++) {
+        if (this.products[i]['title'] == name) {
+          this.productList = this.products[i].products;
+        }
+      }
+    });
+  }
 }

@@ -1,8 +1,8 @@
-export class ProductsList {
+export class Product {
     id: number;
-    image: string;
     name: string;
     description: string;
+    imagePath: string;
     price: number;
-    quantity: number;
+    productGroupId: number;
 }

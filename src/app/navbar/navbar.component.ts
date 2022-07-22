@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../Domain/products.model';
+import { ProductGroup } from '../Domain/productGroup.model';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 
@@ -10,7 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class NavbarComponent implements OnInit {
   sidenav_opened = false;
-  products: Product[];
+  products: ProductGroup[];
   totalItems: any = 0
 
   constructor(private cartService: CartService,

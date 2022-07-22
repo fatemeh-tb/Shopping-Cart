@@ -1,8 +1,8 @@
 <article class="prod clearfix">
     <div class="wrapper">
-        <div class="products" *ngFor="let item of product">
+        <div class="products" *ngFor="let item of productDetails">
             <div class="image-box">
-                <img src="{{item.image}}">
+                <img src="{{item.imagePath}}">
             </div>
             <div class="text-box">
                 <h3 class="name">{{item.name}}</h3>
@@ -10,7 +10,7 @@
                 <div class="addTo">
                     <h3 class="price">&#36;{{item.price}}</h3>
                     <button class="btn add-btn" type="button" name="item-1-button" id="item-1-button"
-                      (click)="onAddToCart(item)">Add to Cart</button>
+                        (click)="onAddToCart(item)">Add to Cart</button>
                 </div>
             </div>
         </div>

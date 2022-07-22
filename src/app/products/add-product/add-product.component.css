@@ -1,0 +1,41 @@
+.add-form {
+  background-color: #f3f3f3;
+}
+
+.add-product {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.submit-btn {
+  width: 6rem;
+  font-weight: 700;
+  margin-top: 30px;
+  color: #886fb8;
+  transition: 00.5s;
+  border: 1px solid #886fb8;
+}
+
+.submit-btn:hover {
+  background-color: #886fb8;
+  color: #fff;
+  width: 8rem;
+  transition: 00.5s;
+}
+
+mat-form-field {
+  margin: 1rem 2rem;
+}
+
+::ng-deep .mat-form-field-label,
+::ng-deep .mat-select-value-text {
+  color: #111;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: #fff;
+  color: #111;
+  border-radius: 5px;
+}

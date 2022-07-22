@@ -1,39 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProductsList } from 'src/app/Domain/productsList.model';
-import { CartService } from 'src/app/services/cart.service';
+import { ProductGroup } from 'src/app/Domain/productGroup.model';
+import { Product } from 'src/app/Domain/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  styleUrls: ['./product-details.component.css'],
 })
-
 export class ProductDetailsComponent implements OnInit {
-  product: ProductsList[] = [];
+  @Input() productDetails: Product[];
 
-  constructor(private productService: ProductService,
-    private cartService: CartService,
-    private route: ActivatedRoute,
-    private snackBar: MatSnackBar) { }
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      let prodName = params['prodName'];
-      this.productService.getProductsById(prodName)
+  ngOnInit(): void {}
 
-      let name = params['name'];
-      this.product.push(this.productService.getProduct(name))
-    });
-  }
-
-  onAddToCart(data: ProductsList) {
-    this.snackBar.open('Item added successfully', 'Got It!', {
-      duration: 3000,
-      verticalPosition: 'top'
-    })
-    this.cartService.addToCart(data)
+  onAddToCart(data: Product) {
+    this.productService.addToCart(data);
   }
 }

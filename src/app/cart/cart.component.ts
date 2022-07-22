@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import swal from 'sweetalert';
-import { ProductsList } from '../Domain/productsList.model';
+import { Product } from '../Domain/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -16,10 +16,10 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    if (localStorage['cart']) {
-      let cartlist = JSON.parse(localStorage.getItem('cart') || '');
-      this.cartService.cartItemList = cartlist;
-    }
+    // if (localStorage['cart']) {
+    //   let cartlist = JSON.parse(localStorage.getItem('cart') || '');
+    //   this.cartService.cartItemList = cartlist;
+    // }
 
     this.products = this.cartService.cartItemList;
     this.totalPrice();
@@ -45,23 +45,23 @@ export class CartComponent implements OnInit {
     });
   }
 
-  incQuantity(quant: ProductsList) {
-    quant.quantity++;
+  incQuantity(quant: Product) {
+    // quant.quantity++;
     this.totalPrice();
     this.cartService.storeLocalStorage();
   }
 
-  decQuantity(quant: ProductsList) {
-    quant.quantity--;
+  decQuantity(quant: Product) {
+    // quant.quantity--;
     this.totalPrice();
     this.cartService.storeLocalStorage();
   }
 
 
   totalPrice() {
-    this.total = this.products.reduce(
-      (acc: any, prod: ProductsList) => (acc += prod.price * prod.quantity),
-      0
-    );
+    // this.total = this.products.reduce(
+    //   (acc: any, prod: ProductsList) => (acc += prod.price * prod.quantity),
+    //   0
+    // );
   }
 }

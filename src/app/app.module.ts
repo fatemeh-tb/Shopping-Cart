@@ -9,19 +9,17 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductDetailsComponent } from './products/product-details/product-details.component';
-import { CartComponent } from './cart/cart.component';
-import { FilterPipe } from './shared/pipes/filter.pipe';
 
-import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
-import { DialogModule } from '@syncfusion/ej2-angular-popups';
-import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from './cart/cart.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
+
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -30,10 +28,8 @@ import { MatListModule } from '@angular/material/list';
     MainComponent,
     NavbarComponent,
     FooterComponent,
-    ProductsComponent,
-    ProductDetailsComponent,
     CartComponent,
-    FilterPipe,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,16 +37,14 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule,
     MatDialogModule,
-    SidebarModule,
-    DialogModule,
     MatSnackBarModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatToolbarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

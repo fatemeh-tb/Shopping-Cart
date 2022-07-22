@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { Product } from '../Domain/products.model';
-import { ProductsList } from '../Domain/productsList.model';
+import { ProductGroup } from '../Domain/productGroup.model';
+import { Product } from '../Domain/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,21 +16,21 @@ export class CartService {
     return this.productList
   }
 
-  addToCart(product: ProductsList) {
+  addToCart(product: Product) {
     if (this.cartItemList.find((i: any) => i.id === product.id)) {
-      product.quantity++;
+      // product.quantity++;
     } else {
       this.cartItemList.push(product);
       this.productList.next(this.cartItemList);
     }
-    this.storeLocalStorage()
+    // this.storeLocalStorage()
   }
 
   removeCartItem(id: number) {
     this.cartItemList.splice(id, 1)
     this.productList.next(this.cartItemList);
     localStorage.removeItem('cart');
-    this.storeLocalStorage()
+    // this.storeLocalStorage()
   }
 
   storeLocalStorage() {

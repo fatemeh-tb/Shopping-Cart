@@ -1,0 +1,50 @@
+<article class="add-form">
+    <div class="add-product">
+        <div class="header">
+            <h3> Add New Product</h3>
+        </div>
+
+        <div class="add-items">
+            <form #form="ngForm" (submit)="onSubmit(form)">
+
+                <mat-form-field class="last" appearance="outline">
+                    <mat-label> Name </mat-label>
+                    <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="productData.name" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label> Description</mat-label>
+                    <input matInput type="text" name="description" #description="ngModel"
+                        [(ngModel)]="productData.description" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label> Price </mat-label>
+                    <input matInput type="number" name="price" #price="ngModel" [(ngModel)]="productData.price"
+                        required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label> ImagePath</mat-label>
+                    <input matInput type="text" name="imagePath" #imagePath="ngModel"
+                        [(ngModel)]="productData.imagePath" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Product Group</mat-label>
+                    <mat-select name="productGroupId" #productGroupId="ngModel" [(ngModel)]="productData.productGroupId"
+                        required>
+                        <mat-option *ngFor="let item of ProductGroupData" [value]="item.id">
+                            {{item.title}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="text-center">
+                    <button class="btn submit-btn" mat-raised-button type="submit"
+                        [disabled]="form.invalid">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>

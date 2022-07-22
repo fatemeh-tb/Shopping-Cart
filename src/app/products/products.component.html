@@ -1,13 +1,12 @@
 <article class="prod clearfix">
-    <div class="wrapper">
+    <div *ngIf="!onDetails" class="wrapper">
         <div class="search-box">
             <input class="search-txt" type="text" [(ngModel)]="searchTerm" placeholder="Search Products"
                 (keyup)="search($event)">
         </div>
-
-        <div class="products" *ngFor="let item of products |  filter:searchKey:'name'">
-            <div class="image-box" [routerLink]="['/products', productName, item.name]">
-                <img src="{{item.image}}">
+        <div class="products" *ngFor="let item of productList |  filter:searchKey:'name'">
+            <div class="image-box" (click)="onProductDetails(item.id)">
+                <img src="{{item.imagePath}}">
             </div>
             <div class="text-box">
                 <p class="name">{{item.name}}</p>
@@ -17,4 +16,7 @@
             </div>
         </div>
     </div>
+    <router-outlet></router-outlet>
 </article>
+
+<app-product-details *ngIf="onDetails" [productDetails]="productDetails"></app-product-details>

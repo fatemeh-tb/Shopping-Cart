@@ -1,47 +1,56 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, Observable } from 'rxjs';
-import * as data from '../../assets/productLists/products.json'
-import { Product } from '../Domain/products.model';
-import { ProductsList } from '../Domain/productsList.model';
+import { Product } from '../Domain/product.model';
+import { CartService } from './cart.service';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  constructor(
+    private http: HttpClient,
+    private snackBar: MatSnackBar,
+    private cartService: CartService
+  ) {}
 
-  constructor(private http: HttpClient) { }
+  public search = new BehaviorSubject<string>('');
 
-  public search = new BehaviorSubject<string>("");
+  private baseUrl: string = "https://localhost:5000"
 
-  products: Product[] = (data as any).default;
-  productList: ProductsList[];
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  }
 
   getProducts(): Observable<any> {
-    return this.http.get('assets/productLists/products.json')
+    return this.http.get(this.baseUrl +'/all');
   }
 
-  getProductsById(name: any) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i]["prodName"] == name) {
-        this.productList = this.products[i].prodList;
-      }
-    }
+
+  getProductById(id: number): Observable<any> {
+    return this.http.get(this.baseUrl + '/product' + '/' + id);
   }
 
-  getProduct(id: any) {
-    return this.productList[this.getSelectedIndex(id)];
+
+  addProduct(product: Product) {
+    this.snackBar.open('Item added successfully', 'Got It!', {
+      duration: 3000,
+      verticalPosition: 'top',
+    });
+    return this.http.post<Product>(this.baseUrl + "/product", product, this.httpOptions)
   }
 
-  getSelectedIndex(id: any){
-    for (var i = 0; i < this.productList.length; i++) {
-      if (this.productList[i].name == id) {
-        return i;
-      }
-    }
-    return -1;
-  }
 
+  addToCart(data: Product) {
+    this.snackBar.open('Item added successfully', 'Got It!', {
+      duration: 3000,
+      verticalPosition: 'top',
+    });
+    this.cartService.addToCart(data);
+  }
 }
