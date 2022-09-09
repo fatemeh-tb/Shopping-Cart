@@ -1,8 +1,8 @@
 export class Product {
-    id: number;
-    name: string;
-    description: string;
-    imagePath: string;
-    price: number;
-    productGroupId: number;
+  id: number;
+  name: string;
+  description: string;
+  imagePath: string;
+  price: number;
+  productGroupId: number;
 }

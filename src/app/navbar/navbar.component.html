@@ -13,8 +13,11 @@
                 shopping_cart
             </a>
         </li>
-        <li class="list-item" [routerLink]="['addproduct']" ><a class="material-icons-outlined">
+        <li class="list-item" [routerLink]="['login']"><a class="material-icons-outlined">
                 person
+            </a></li>
+        <li *ngIf="isAuthenticated" class="list-item" (click)="onLogout()"><a class="material-icons-outlined">
+                logout
             </a></li>
     </ul>
 </nav>

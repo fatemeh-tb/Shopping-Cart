@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "Thrive"
+  "defaultProject": "Thrive",
+  "cli": {
+    "analytics": false
+  }
 }

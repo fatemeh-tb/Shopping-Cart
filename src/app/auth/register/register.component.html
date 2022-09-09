@@ -1,0 +1,64 @@
+<article class="auth-form">
+  <div class="form-info">
+
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      <span [innerHTML]="errorMessage"></span>
+    </div>
+
+    <div class="container">
+      <div class="screen">
+        <div class="screen__content">
+          <form class="login" [formGroup]="registerForm" autocomplete="off" novalidate
+            (ngSubmit)="registerUser(registerForm.value)">
+            <div class="login__field">
+              <input type="text" id="name" formControlName="name" placeholder="Your Name"
+                class="form-control login__input" required="" />
+              <div class="error-msg">
+                <em *ngIf="validateControl('name') && hasError('name', 'required')">Name is required</em>
+              </div>
+            </div>
+            <div class="login__field">
+              <input type="email" id="email" formControlName="email" placeholder="Email Address..."
+                class="form-control login__input" required="" />
+              <div class="error-msg">
+                <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
+                <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+              </div>
+            </div>
+            <div class="login__field">
+              <input type="password" id="password" formControlName="password" placeholder="Password"
+                class="form-control login__input" required />
+              <div class="error-msg">
+                <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is
+                  required</em>
+              </div>
+            </div>
+            <div class="login-field">
+              <span>Alreay Have Account? <a href="/login">Login</a></span>
+          </div>
+            <button type="submit" class="button login__submit" [disabled]="!registerForm.valid">
+              <span class="button__text">Sign Up</span>
+              <span class="button__icon material-icons-outlined">
+                    login
+              </span>
+            </button>
+          </form>
+          <div class="social-login">
+            <h2>Sign Up via</h2>
+            <div class="social-icons">
+              <a>
+                <span class="social-login__icon iconify" data-icon="ant-design:google-circle-filled"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="screen__background">
+          <span class="screen__background__shape screen__background__shape4"></span>
+          <span class="screen__background__shape screen__background__shape3"></span>
+          <span class="screen__background__shape screen__background__shape2"></span>
+          <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

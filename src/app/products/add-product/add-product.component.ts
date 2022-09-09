@@ -3,6 +3,7 @@ import { ProductGroup } from 'src/app/Domain/productGroup.model';
 import { Product } from 'src/app/Domain/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-add-product',
@@ -13,15 +14,13 @@ export class AddProductComponent implements OnInit {
   productData: Product = new Product();
   ProductGroupData: ProductGroup[];
 
-  constructor(public productService: ProductService) {}
-
+  constructor(public productService: ProductService, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(res => {
-      this.ProductGroupData = res
-    })
+    this.productService.getProducts().subscribe((res) => {
+      this.ProductGroupData = res;
+    });
   }
-
 
   onSubmit(form: NgForm) {
     const data: Product = form.value;
@@ -29,4 +28,6 @@ export class AddProductComponent implements OnInit {
       form.reset();
     });
   }
+
+
 }
