@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
     //   let cartlist = JSON.parse(localStorage.getItem('cart') || '');
     //   this.cartService.cartItemList = cartlist;
     // }
-
     this.products = this.cartService.cartItemList;
     this.totalPrice();
   }
@@ -56,7 +55,6 @@ export class CartComponent implements OnInit {
     this.totalPrice();
     this.cartService.storeLocalStorage();
   }
-
 
   totalPrice() {
     // this.total = this.products.reduce(

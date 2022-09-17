@@ -15,14 +15,18 @@ export class NavbarComponent implements OnInit {
   products: ProductGroup[];
   totalItems: any = 0;
 
-  isAuthenticated = false;
+  isUserAuthenticated = false;
   private userSub: Subscription;
 
   constructor(
     private cartService: CartService,
     private productService: ProductService,
     public authService: AuthService
-  ) {}
+  ) {
+    this.authService.authChanged.subscribe((res) => {
+      this.isUserAuthenticated = res;
+    });
+  }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data: any) => {
@@ -34,7 +38,7 @@ export class NavbarComponent implements OnInit {
     });
 
     this.userSub = this.authService.authChangeSub.subscribe((user) => {
-      this.isAuthenticated = !!user;
+      this.isUserAuthenticated = !!user;
       console.log(!user);
       console.log(!!user);
     });

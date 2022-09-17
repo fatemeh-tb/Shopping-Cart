@@ -1,0 +1,10 @@
+.forbidden {
+  background-color: #f3f3f3;
+}
+
+.main {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+}

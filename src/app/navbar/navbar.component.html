@@ -13,10 +13,11 @@
                 shopping_cart
             </a>
         </li>
-        <li class="list-item" [routerLink]="['login']"><a class="material-icons-outlined">
+        <li *ngIf="!isUserAuthenticated" class="list-item" [routerLink]="['authentication/login']"><a
+                class="material-icons-outlined">
                 person
             </a></li>
-        <li *ngIf="isAuthenticated" class="list-item" (click)="onLogout()"><a class="material-icons-outlined">
+        <li *ngIf="isUserAuthenticated" class="list-item" (click)="onLogout()"><a class="material-icons-outlined">
                 logout
             </a></li>
     </ul>
@@ -25,8 +26,15 @@
 
 <div class="sidenav" [class.openSide]="sidenav_opened" *ngFor="let item of products">
     <a class="closebtn" (click)="onCloseSidenav()">&times;</a>
-    <li class="title">products</li>
-    <li [routerLink]="['/products', products[0].title]" class="item"><a>CBD Oil</a></li>
-    <li [routerLink]="['/products', products[1].title]" class="item"><a>Hand Sanitizers</a> </li>
-    <li [routerLink]="['/products', products[2].title]" class="item"><a>Balms</a></li>
+    <div *ngIf="isUserAuthenticated">
+        <li class="title">Dashboard</li>
+        <li class="item"><a>Profile</a></li>
+        <li class="item"><a>orders</a> </li>
+    </div>
+    <div>
+        <li class="title">products</li>
+        <li [routerLink]="['/products', products[0].title]" class="item"><a>CBD Oil</a></li>
+        <li [routerLink]="['/products', products[1].title]" class="item"><a>Hand Sanitizers</a> </li>
+        <li [routerLink]="['/products', products[2].title]" class="item"><a>Balms</a></li>
+    </div>
 </div>

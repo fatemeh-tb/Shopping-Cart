@@ -45,11 +45,9 @@ export class LoginComponent implements OnInit {
       password: login.password,
     };
 
-
     this.authService.loginUser(userForAuth).subscribe({
       next: (res: LoginResponseDto) => {
         localStorage.setItem('token', res.token);
-        console.log(res)
         this.authService.sendAuthStateChangeNotification(res.isAuthSuccessful);
         this.router.navigate(['/home']);
       },

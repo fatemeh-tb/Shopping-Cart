@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterDto } from 'src/app/Domain/Users/registerDto.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
     };
 
     this.authService.registerUser(user).subscribe({
-      next: (_) => this.router.navigate(['/login']),
+      next: (_) => this.router.navigate(['authentication/login']),
       error: (err: HttpErrorResponse) => {
         this.errorMessage = err.message;
         this.showError = true;
